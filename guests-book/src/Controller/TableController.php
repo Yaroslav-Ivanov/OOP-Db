@@ -5,7 +5,7 @@ namespace Controller;
 use Model\CRUDInterface;
 use View\View;
 
-class TableController
+class TableController extends AbstractController
 {
 
     protected  $table;
@@ -30,8 +30,17 @@ class TableController
 
     public function actionAdd(array $data)
     {
-        $this->table->add($data);
-        header("Location:?action=show");    // Оставляет нас на этой же страничке
+        $this->table->add($data['post']);
+        $this->redirect('?action=show');    // header("Location:?action=show") Оставляет нас на этой же страничке
+    }
+
+    public function actionDel(array $data)
+    {
+        print_r($data);
+        if(isset($data['get']['id'])){
+            $this->table->delete($data['get']['id']); 
+        }
+        $this->redirect('?action=show');
     }
 
     public function actionDefault()

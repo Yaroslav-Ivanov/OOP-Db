@@ -39,7 +39,7 @@ class Dispatcher
 
         $action = "action" . $_GET["action"];
 
-        $controllerData = $_POST;
+        $controllerData =["POST"=>$_POST, "GET"=>$_GET];
 
         if (method_exists($controller, $action)) {
             $controller->{$action}($controllerData);

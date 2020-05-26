@@ -7,7 +7,8 @@ foreach ($table as $row) {
     foreach ($row as $value){
         echo "<td>$value</td>";
     }
-    echo '</tr>';
+    echo "<td><a href='?action=del&id=$row[id]'>Del</a></td>";
+    echo "</tr>";
 }
 
 echo '</table>';
