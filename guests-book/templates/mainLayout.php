@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <a href="?action=show">Показать</a>
     <?php
     $this->body();
     ?>

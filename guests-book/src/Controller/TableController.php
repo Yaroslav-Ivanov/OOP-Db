@@ -22,6 +22,24 @@ class TableController
     public function actionShow()
     {
     //    print_r($this->table->get());
-       $this->view->setData(['table' => $this->table->get()])->view();
+       $this
+       ->view
+       ->setData(['table' => $this->table->get()])
+       ->view();
+    }
+
+    public function actionAdd(array $data)
+    {
+        $this->table->add($data);
+        header("Location:?action=show");    // Оставляет нас на этой же страничке
+    }
+
+    public function actionDefault()
+    {
+    //    print_r($this->table->get());
+       $this
+       ->view
+       ->setTemplate('default')
+       ->view();
     }
 }

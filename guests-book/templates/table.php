@@ -12,7 +12,7 @@ foreach ($table as $row) {
 
 echo '</table>';
 ?>
-<form method="POST" class="form">
+<form method="POST" action="?action=add" class="form">
     <textarea name="text"></textarea>
     <input type="text" name="name" value="Name">
     <input type="submit" value="Ok">
